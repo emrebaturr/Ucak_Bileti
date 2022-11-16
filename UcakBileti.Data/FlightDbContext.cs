@@ -8,13 +8,15 @@ using UcakBileti.Entity;
 
 namespace UcakBileti.Data
 {
-    public class UcusDbContext : DbContext
+    public class FlightDbContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=LAPTOP-JS6T7H4D;Database=UcusDB;uid=sa;pwd=Password1");
+            optionsBuilder.UseSqlServer("Server=LAPTOP-JS6T7H4D;Database=FlightDB;uid=sa;pwd=Password1");
         }
-        public DbSet<Ucus> Ucuslar { get; set; }
+        public DbSet<Flight> Flights { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<FlightDetail> FlightDetails { get; set; }
     }
 }
